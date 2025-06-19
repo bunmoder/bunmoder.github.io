@@ -1,0 +1,89 @@
+@import '@fontsource/share-tech-mono';
+
+:root {
+  --signalis-red: #b3001b;
+  --signalis-orange: #ff3c1a;
+  --signalis-black: #18181b;
+  --signalis-gray: #232326;
+  --signalis-offwhite: #eaeaea;
+  --signalis-panel: #18181b;
+  --signalis-border: #ff3c1a;
+  --signalis-glow: #ff3c1a88;
+  font-family: 'Share Tech Mono', 'Fira Mono', 'Consolas', monospace;
+  color-scheme: dark;
+  color: var(--signalis-offwhite);
+  background-color: var(--signalis-black);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--signalis-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 9999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  color: var(--signalis-orange);
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: var(--signalis-orange);
+  text-decoration: none;
+}
+a:hover {
+  text-shadow: 0 0 4px var(--signalis-orange);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
